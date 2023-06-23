@@ -1,0 +1,39 @@
+.containerCard {
+padding: 1rem;
+width: 27rem;
+border-radius: 0.75rem;
+display: flex;
+position: relative;
+color: #ffffff;
+background-color: #bf9762;
+}
+
+.containerTipo{
+    margin-bottom: 3.25rem;
+}
+
+.pokemon{
+    position: absolute;
+    top: -3,75rem;
+    right: 0;
+    z-index: 2;
+}
+
+.capturar {
+    width: 9.12rem;
+    height: 2.3 rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0.7rem;
+    z-index: 2;
+    color: #0f0f0f;
+  }
+
+  .pokebola {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
