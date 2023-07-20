@@ -1,3 +1,4 @@
+//Importações necessarias para a aplicação 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -12,11 +13,15 @@ import {
 import Header from "../../Components/Header/Header";
 import { ProgressBar, Stats } from "./pokemonDetailPageStyle";
 
-function PokemonDetailPage() {
+export default function PokemonDetailPage() {
+  
+  //Use Params e Estados Locais
   const { id } = useParams();
   const [pokemonData, setPokemonData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  //useEffect para puxar a pokemonList e identificar o pokemon (pelo id)
+  //que deve ser exibidos e fazer a requisiçao do pokemon
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
@@ -28,19 +33,21 @@ function PokemonDetailPage() {
         setIsLoading(false);
       }
     };
-
     fetchPokemonData();
   }, [id]);
 
+// Logica para rendenizar o GIF de Loading enquanto carrega
   if (isLoading) {
     return <p> Carregando... </p>;
   }
 
+// Logica para o total dos base status dos pokemons
   let soma = 0;
   for (const stats of pokemonData.stats) {
     soma += stats.base_stat;
   }
 
+  // Logica para obter os types dos pokemons
   const types = pokemonData.types.map((typeObj) => typeObj.type.name);
   const type = types.length === 1 ? [types[0]] : types;
   const sendTypeDetail = type.map((e, id) => {
@@ -51,14 +58,12 @@ function PokemonDetailPage() {
     );
   });
 
+//Return - O que sera rendenizado
   return (
     <>
       <Header pokemon={pokemonData} />
       <All>
-        <TituloPagina>
-          <p className="ajuste">.</p>
-          <b className="Title"> Meus Pokémons</b>
-        </TituloPagina>
+        <TituloPagina><p className="ajuste">.</p><b className="Title">Meus Pokémons</b></TituloPagina>
         <DivMae variant={sendColor(type[0])}>
           <div className="div-1">
             <div className="img1">
@@ -103,7 +108,6 @@ function PokemonDetailPage() {
                 <p className="id">#{id}</p>
               </div>
               <h1>{pokemonData.name}</h1>
-
               {sendTypeDetail}
             </div>
             <div className="tex">
@@ -130,4 +134,4 @@ function PokemonDetailPage() {
     </>
   );
 }
-export default PokemonDetailPage;
+

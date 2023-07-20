@@ -1,3 +1,4 @@
+//Importações necessarias para a aplicação 
 import React, { useState, useEffect, useContext } from "react";
 import { DataContext } from "../../Constants/DataContext";
 import axios from "axios";
@@ -8,21 +9,25 @@ import PokemonCard from "../../Components/PokemonCard/pokemonCard";
 import CustomAlert from "../../Components/Alert/CustomAlert";
 import {BASE_URL, GIF_LOADING} from "../../Constants/constants";
 
-function PokemonListPage({ pokemon }) {
+export default function PokemonListPage({ pokemon }) {
+  
+  //Estado Global e Estados Locais
   const [favorites, setFavorites] = useContext(DataContext);
   const [pokemonsList, setPokemonsList] = useState([]);
   const [alertMessage, setAlertMessage] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
   const [isLoading, setIsLoading] = useState(false); 
 
+  //UseEffect para "forçar" a requisição dos pokemons
   useEffect(() => {
     getPokes();
   }, []);
 
+  //Requisição para receber os dados da API
   const getPokes = async () => {
     setIsLoading(true);
     var endpointsList = [];
-    for (var i = 1; i < 15; i++) {
+    for (var i = 1; i < 151; i++) {
       endpointsList.push(`${BASE_URL}${i}`);
     }
     await axios
@@ -32,6 +37,7 @@ function PokemonListPage({ pokemon }) {
       .finally(() => setIsLoading(false));
   };
 
+  //Funções Add e Remove Pokemon da favorites
   const addToPokedex = (pokemon) => {
     const isAlreadyFavorite = favorites.some((p) => p.id === pokemon.id);
     if (!isAlreadyFavorite) {
@@ -41,7 +47,6 @@ function PokemonListPage({ pokemon }) {
       setShowAlert(true);
     }
   };
-
   const removeToPokedex = (pokemon) => {
     const updatedFavorites = favorites.filter((p) => p.id !== pokemon.id);
     setFavorites(updatedFavorites);
@@ -50,6 +55,7 @@ function PokemonListPage({ pokemon }) {
     setShowAlert(true);
   };
 
+  //Return - O que sera rendenizado
   return (
     <>
       <Header />
@@ -88,4 +94,4 @@ function PokemonListPage({ pokemon }) {
     </>
   );
 }
-export default PokemonListPage;
+ 

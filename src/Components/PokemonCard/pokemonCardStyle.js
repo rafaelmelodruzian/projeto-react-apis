@@ -1,18 +1,6 @@
 import styled from "styled-components";
 
 //CARD
-export const PokemonCardStyle = styled.div`
-  width: 26rem;
-  height: 16.625rem;
-  display: flex;
-  position: relative;
-  align-items: end;
-  background-color: #5d5d5d;
-  margin-right: 1vw;
-  margin-left: 1vw;
-  margin-bottom: 3rem;
-`;
-
 export const CardBox = styled.div`
   width: 26rem;
   height: 13.125rem;
@@ -28,13 +16,24 @@ export const CardBox = styled.div`
     margin-top: 1rem;
   }
 `;
-
+export const PokemonCardStyle = styled.div`
+  width: 26rem;
+  height: 16.625rem;
+  display: flex;
+  position: relative;
+  align-items: end;
+  background-color: #5d5d5d;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-bottom: 3rem;
+`;
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 `;
 
+//Id, nome e tipo Pokemon
 export const BoxInfoType = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,6 +63,7 @@ export const BoxInfoType = styled.div`
   }
 `;
 
+// IMAGEM POKEMON
 export const PokeImage = styled.img`
   position: absolute;
   top: -3vh;
@@ -87,7 +87,6 @@ export const ButtonDetail = styled.button`
   margin-left: 1vw;
   margin-top: -1rem;
 `;
-
 export const ButtonCatch = styled.button`
   position: absolute;
   font-family: "Poppins", serif;
@@ -105,7 +104,6 @@ export const ButtonCatch = styled.button`
   background: #ffffff;
   margin-bottom: 0.3rem;
 `;
-
 export const ButtonRemovee = styled.button`
   position: absolute;
   font-family: "Poppins", serif;

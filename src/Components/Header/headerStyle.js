@@ -1,5 +1,6 @@
 import styled from "styled-components";
-// Estilização Geral da pagina
+
+// Estilização Geral do componente
 export const HeaderStyle = styled.header`
   margin: 0;
   padding: 0;
@@ -22,13 +23,15 @@ export const HeaderStyle = styled.header`
     }
   }
 `;
+
+//Logo Pokemon
 export const ImagemLogo = styled.img`
   width: 25vw;
   margin-left: 3vw;
 margin-right: 5rem;
 `;
 
-// Estilizações dos botões
+// Botões
 export const BtnMaisPokemons = styled.button`
   width: 25vw;
   font-family: "Poppins";

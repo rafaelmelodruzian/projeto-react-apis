@@ -2,26 +2,27 @@ import React, { useRef, useEffect } from "react";
 import "./CustomAlert.css";
 
 const CustomAlert = ({ message, onClose, show }) => {
+  //useRef para controlar o alert/modal
   const alertRef = useRef(null);
 
+  // useEffect e useRef controlando o alert/modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (alertRef.current && !alertRef.current.contains(event.target)) {
         onClose();
-      }
-    };
-
+      }    };
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
 
+  //Logica para exibir ou não o alert / modal
   if (!show) {
-    return null; // Retorna null para não renderizar o alerta quando show for false
-  }
+    return null; 
+    }
 
+  //Return - O que sera rendenizado
   return (
     <div ref={alertRef} className="custom-alert">
       <h1 className="custom-alert-message">{message[0]}</h1>
@@ -29,5 +30,4 @@ const CustomAlert = ({ message, onClose, show }) => {
     </div>
   );
 };
-
 export default CustomAlert;

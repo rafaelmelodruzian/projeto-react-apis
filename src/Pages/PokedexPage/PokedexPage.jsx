@@ -1,3 +1,4 @@
+//Importações necessarias para a aplicação
 import React, { useContext, useState } from "react";
 import { TituloPagina, Container } from "./pokedexPageStyle";
 import Header from "../../Components/Header/Header";
@@ -6,11 +7,13 @@ import PokemonCard from "../../Components/PokemonCard/pokemonCard";
 import { sendType } from "../../Constants/constants";
 import CustomAlert from "../../Components/Alert/CustomAlert";
 
-function PokedexPage() {
+export default function PokedexPage() {
+  //Estados Locais usados
   const [favorites, setFavorites] = useContext(DataContext);
   const [alertMessage, setAlertMessage] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
 
+  //Função para removar o pokemon da pokedex
   const removeToPokedex = (pokemon) => {
     const updatedFavorites = favorites.filter((p) => p.id !== pokemon.id);
     setFavorites(updatedFavorites);
@@ -19,15 +22,18 @@ function PokedexPage() {
     setShowAlert(true);
   };
 
+  //Return - O que sera rendenizado
   return (
     <>
       <Header />
-      <TituloPagina><p className="ajuste">.</p><b className="Title"> Meus Pokémons</b></TituloPagina>
+      <TituloPagina>
+        <p className="ajuste">.</p>
+        <b className="Title"> Meus Pokémons</b>
+      </TituloPagina>
       <Container>
         {favorites.map((pokemon) => {
           const types = pokemon.types.map((typeObj) => typeObj.type.name);
           const type = types.length === 1 ? [types[0]] : types;
-
           return (
             <PokemonCard
               key={pokemon.id}
@@ -51,5 +57,3 @@ function PokedexPage() {
     </>
   );
 }
-
-export default PokedexPage;
