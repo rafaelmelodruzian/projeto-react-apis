@@ -1,37 +1,18 @@
 import React from "react";
-// import React, { useContext, useEffect } from "react";
-import {
-  PokemonCardStyle,
-  CardBox,
-  InfoBox,
-  BoxInfoType,
-  PokeImage,
-  ButtonCatch,
-  ButtonDetail,
-  ButtonRemovee,
-} from "./pokemonCardStyle";
-import { sendColor} from "../../Constants/constants";
+import {PokemonCardStyle,CardBox,InfoBox,BoxInfoType,PokeImage,ButtonCatch,ButtonDetail,ButtonRemovee} from "./pokemonCardStyle";
+import { POKE_IMAGES, sendColor} from "../../Constants/constants";
 import { goToDetail } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-// import { DataContext } from "../../Constants/DataContext";
 
 function PokemonCard({ id, tipo, type, pokemon, addToPokedex, removeToPokedex, isFavorite }) {
   const navigator = useNavigate();
-  // const [favorites, setFavorites] = useContext(DataContext);
-
-  // useEffect(() => {
-  //   setIsFavorite(favorites.some((p) => p.id === pokemon.id));
-  // }, [favorites, pokemon]);
-
-  // const setIsFavorite = (isFav) => {
-  //     };
 
   return (
     <PokemonCardStyle>
       <PokeImage
         key={id}
         height="165px"
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+        src={`${POKE_IMAGES}${id}.png`}
         alt="Imagem do Pokemon"
       />
       <CardBox variant={sendColor(type[0])}>

@@ -2,10 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { TituloPagina, DivMae, All } from "./pokemonDetailPageStyle";
-import { sendColor, sendType } from "../../Constants/constants";
+import {
+  POKE_IMAGES,
+  sendColor,
+  sendType,
+  BASE_URL,
+  POKE_BOLA2,
+} from "../../Constants/constants";
 import Header from "../../Components/Header/Header";
 import { ProgressBar, Stats } from "./pokemonDetailPageStyle";
-import BASE_URL from "../../Constants/constants";
 
 function PokemonDetailPage() {
   const { id } = useParams();
@@ -115,14 +120,10 @@ function PokemonDetailPage() {
           <div className="div-4">
             <img
               className="img1"
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+              src={`${POKE_IMAGES}${id}.png`}
               alt="Imagem do Pokemon"
             />
-            <img
-              className="img2"
-              src="https://imgur.com/WwJ5Tse.png"
-              alt="Pokebola"
-            />
+            <img className="img2" src={POKE_BOLA2} alt="Imagem da Pokebola" />
           </div>
         </DivMae>
       </All>
