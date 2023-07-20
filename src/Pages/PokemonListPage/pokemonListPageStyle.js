@@ -1,24 +1,37 @@
 import styled from "styled-components";
 
-export const TituloPagina = styled.h1`
-  margin-top: 2.6vh;
-  font-family: "poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2.5vw;
-  color:  black;
-  background-color: lightgray;
-  margin-left:2vw;
+export const All = styled.body`
+  background-color: #5d5d5d;
+  margin: 0;
+  padding: 0;
+  border: 0;
+`;
 
+export const TituloPagina = styled.h1`
+  font-family: "poppins", sans-serif;
+  font-size: 3vw;
+  color: white;
+  background-color: #5d5d5d;
+  margin: 0;
+  padding: 0;
+  .Title {
+    margin-left: 1.2rem;
+    
+  }
+  .ajuste{
+color: transparent;
+font-size: 1rem;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: lightgray;
+  background-color: #5d5d5d;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-left: 1.5rem;
-
+  margin-top: 1.6rem;
+  .loading {
+    width: 100vw;
+    height: 78vh;
+  }
 `;
-

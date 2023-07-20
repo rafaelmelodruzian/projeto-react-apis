@@ -1,13 +1,17 @@
 import React from "react";
-import Router from "./routes/router";
-import PokedexPage from "./Pages/PokedexPage/PokedexPage";
+import AppRouter from "./routes/router";
 import { DataProvider } from "./Constants/DataContext";
 
 function App() {
   return (
+
     <DataProvider>
-      <Router />
+    
+        <AppRouter />
+      
     </DataProvider>
+
   );
 }
+
 export default App;

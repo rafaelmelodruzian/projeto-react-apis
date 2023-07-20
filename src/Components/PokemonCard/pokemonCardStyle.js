@@ -1,91 +1,125 @@
 import styled from "styled-components";
 
+//CARD
 export const PokemonCardStyle = styled.div`
-  width: 30vw;
-  height: 29vh;
+  width: 26rem;
+  height: 16.625rem;
   display: flex;
   position: relative;
   align-items: end;
+  background-color: #5d5d5d;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-bottom: 3rem;
 `;
+
 export const CardBox = styled.div`
-  width: 30vw;
-  height: 24vh;
+  width: 26rem;
+  height: 13.125rem;
   border-radius: 0.6vw;
   background-color: ${(props) => props.variant};
   display: flex;
   justify-content: space-between;
-  .pokemon__type{
-    height: 2rem;}
-
+  .pokebola {
+    width: 15rem;
+    position: absolute;
+    z-index: 0;
+    margin-left: 11rem;
+    margin-top: 1rem;
+  }
 `;
+
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 `;
+
 export const BoxInfoType = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.6vh;
   margin-left: 1.1vw;
   color: white;
-  .idPok.idPok {
+  .idPok {
     font-family: "Inter", sans-serif;
-    font-size: 0.8vw;
+    font-size: 1rem;
+    line-height: 2.4375rem;
+    font-weight: 700;
+    margin-bottom: -0.8rem;
   }
   .nomePok {
-    font-size: 1.6vw;
+    font-size: 2rem;
     font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+    line-height: 2.4375rem;
+    font-weight: 700;
   }
-  .img-types{
-    img{
-     width: 5rem;
-     height: 1 rem;
+  .img-types {
+    img {
+      height: 1.9375rem;
+      width: 4.6rem;
       margin-right: 5px;
       margin-top: 5px;
     }
   }
 `;
+
+export const PokeImage = styled.img`
+  position: absolute;
+  top: -3vh;
+  right: 0.2vw;
+  width: 12.0625rem;
+  height: 12.0625rem;
+  z-index: 1;
+`;
+
+//BOTÕES
 export const ButtonDetail = styled.button`
   width: 6vw;
-  height: 5vh;
-  font-size: 0.8vw;
-  margin: 0 0 4, 2vh 1, 4vw;
+  font-size: 1rem;
   font-family: "Poppins", serif;
-  font-style: normal;
-  font-weight: 700;
   text-decoration-line: underline;
   background-color: transparent;
   border: none;
   color: #ffffff;
-  overflow: hidden;
+  line-height: 1.5rem;
+  cursor: pointer;
+  margin-left: 1vw;
+  margin-top: -1rem;
 `;
-export const PokeImage = styled.img`
-  position: absolute;
-  top: -2vh;
-  right: 0.2vw;
-  width: 10vw;
-`;
+
 export const ButtonCatch = styled.button`
   position: absolute;
-  right: 1.71vw;
-  bottom: 2.14vh;
+  font-family: "Poppins", serif;
+  right: 1vw;
   font-size: 1vw;
-  width: 7vw;
-  height: 3.5vh;
+  line-height: 1.5rem;
+  bottom: 2.14vh;
+  font-weight: 400;
+  width: 9.125rem;
+  height: 2.375rem;
   border: none;
-  background: #ffffff;
   border-radius: 0.4vw;
+  cursor: pointer;
+  color: #0f0f0f;
+  background: #ffffff;
+  margin-bottom: 0.3rem;
 `;
 
 export const ButtonRemovee = styled.button`
   position: absolute;
-  right: 1.71vw;
-  bottom: 2.14vh;
+  font-family: "Poppins", serif;
+  right: 1vw;
   font-size: 1vw;
-  width: 7vw;
-  height: 3.5vh;
+  line-height: 1.5rem;
+  bottom: 2.14vh;
+  font-weight: 400;
+  width: 9.125rem;
+  height: 2.375rem;
   border: none;
-  background: orangered;
   border-radius: 0.4vw;
+  cursor: pointer;
+  color: #ffffff;
+  background: #ff6262;
+  margin-bottom: 0.3rem;
 `;
