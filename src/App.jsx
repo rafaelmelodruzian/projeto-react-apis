@@ -2,16 +2,10 @@ import React from "react";
 import AppRouter from "./routes/router";
 import { DataProvider } from "./Constants/DataContext";
 
-function App() {
+export default function App() {
   return (
-
     <DataProvider>
-    
-        <AppRouter />
-      
+      <AppRouter />
     </DataProvider>
-
   );
 }
-
-export default App;

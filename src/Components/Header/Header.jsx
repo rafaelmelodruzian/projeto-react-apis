@@ -1,3 +1,4 @@
+//Importações necessarias para a aplicação 
 import React, { useContext, useState } from "react";
 import {
   HeaderStyle,
@@ -11,15 +12,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { goToList, goToPokedex } from "../../routes/coordinator";
 import { DataContext } from "../../Constants/DataContext";
 import CustomAlert from "../Alert/CustomAlert";
+import { MENOR_CARC, LOGO_POKE } from "../../Constants/constants";
 
 export default function Header({ pokemon }) {
-  const navigator = useNavigate();
-  const location = useLocation();
-  const { pathname } = location;
+    
+// Navigator, useLocation e Estados Locais 
+const navigator = useNavigate();
+const location = useLocation();
+const { pathname } = location;
   const [favorites, setFavorites] = useContext(DataContext);
   const [alertMessage, setAlertMessage] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
 
+  //Funções Add e Remove Pokemon da favorites
   const addToPokedex = (pokemon) => {
     const isAlreadyFavorite = favorites.some((p) => p.id === pokemon.id);
     if (!isAlreadyFavorite) {
@@ -29,7 +34,6 @@ export default function Header({ pokemon }) {
       setShowAlert(true);
     }
   };
-
   const removeToPokedex = (pokemon) => {
     const updatedFavorites = favorites.filter((p) => p.id !== pokemon.id);
     setFavorites(updatedFavorites);
@@ -38,17 +42,18 @@ export default function Header({ pokemon }) {
     setShowAlert(true);
   };
 
+  //Condições para rendenização dos botoes do header
   const renderBtnMaisPokemons =
     pathname.includes("/detail") || pathname === "/pokedex";
   const renderBtnPokedex = pathname === "/list";
-
   const renderBtnAdd =
     pathname.includes("/detail") &&
     !favorites.find((poke) => poke.id === pokemon.id);
-
   const renderBtnRemove =
     pathname.includes("/detail") &&
     favorites.find((poke) => poke.id === pokemon.id);
+
+  //Return - O que sera rendenizado
   return (
     <>
       <HeaderStyle>
@@ -58,7 +63,7 @@ export default function Header({ pokemon }) {
               <BtnMaisPokemons onClick={() => goToList(navigator)}>
                 <img
                   className="menor"
-                  src="https://img2.gratispng.com/20180717/y/kisspng-less-than-sign-greater-than-sign-equals-sign-at-si-less-than-sign-5b4e28e01ec516.021790021531848928126.jpg"
+                  src={MENOR_CARC}
                   alt="menor"
                 />
                 Todos os Pokemons
@@ -66,9 +71,8 @@ export default function Header({ pokemon }) {
             )}
           </div>
           <div className="header__2">
-            {/* Renderiza o LOGO com borda se estiver na página da Pokédex */}
-            <ImagemLogo
-              src="https://imgur.com/5kW7J9D.jpg"
+                     <ImagemLogo
+              src={LOGO_POKE}
               alt="Imagem do Logo Pokemon"
                          />
           </div>

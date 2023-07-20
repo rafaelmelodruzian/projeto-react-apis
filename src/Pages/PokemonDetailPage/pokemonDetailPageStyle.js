@@ -86,7 +86,6 @@ export const DivMae = styled.div`
       }
       .status_soma {
         margin-left: 3rem;
-     
       }
     }
   }
@@ -131,7 +130,7 @@ export const DivMae = styled.div`
       background-color: white;
       margin-top: 31vh;
       width: 15.75rem;
-      height: 27.5rem;
+      height: 26.5rem;
       position: absolute;
       flex-direction: column;
       align-items: flex-start;
@@ -141,7 +140,7 @@ export const DivMae = styled.div`
       display: flex;
       span {
         width: 7.125rem;
-        height: 2rem;
+        height: 1rem;
         border: dashed #00000024 1px;
         border-radius: 0.75rem;
         background-color: #ececec;
@@ -150,11 +149,10 @@ export const DivMae = styled.div`
         line-height: 1.0625rem;
         font-weight: 400;
         color: #000000;
-        margin-bottom: 0.8rem;
-        text-align: center;
+        margin-bottom: 1rem;
+        text-align: start;
         margin-left: 1rem;
-        padding: 5px;
-        align-items: center;
+        padding: 0.4375rem;
       }
     }
     .mooves_rend {
@@ -195,8 +193,8 @@ export const DivMae = styled.div`
 
 // Estilização Barras de Status
 export const ProgressBar = styled.div`
-  width: 100%;
-  height: 1rem;
+  width: 200px;
+  height: 0.8rem;
   display: flex;
 
   &::before {
@@ -210,7 +208,7 @@ export const Stats = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 2%;
-  width: 100%;
+  width: 97%;
   margin-top: 3%;
   font-size: 1vw;
   border: 0.1vw dashed rgba(245, 222, 179, 0.5);

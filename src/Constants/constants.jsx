@@ -1,3 +1,4 @@
+// URL´S
 export const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 
 export const POKE_IMAGES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
@@ -5,7 +6,13 @@ export const POKE_IMAGES = "https://raw.githubusercontent.com/PokeAPI/sprites/ma
 export const GIF_LOADING = "https://cdn.dribbble.com/users/722246/screenshots/2845858/pokemon_menu.gif"
 
 export const POKE_BOLA2 = "https://imgur.com/WwJ5Tse.png"
+
+export const POKE_BOLA1 = "https://imgur.com/eXtDn9x.png"
  
+export const MENOR_CARC = "https://img2.gratispng.com/20180717/y/kisspng-less-than-sign-greater-than-sign-equals-sign-at-si-less-than-sign-5b4e28e01ec516.021790021531848928126.jpg"
+
+export const LOGO_POKE = "https://imgur.com/5kW7J9D.jpg"
+
 
 //Funçoes de tipos e cores pokemons
 export function sendColor(e) {

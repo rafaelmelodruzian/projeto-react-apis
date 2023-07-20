@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//Estilização pagina geral
 export const TituloPagina = styled.h1`
   font-family: "poppins", sans-serif;
   font-size: 3vw;
@@ -21,7 +22,7 @@ export const Container = styled.div`
   flex-direction: row;
   background-color: #5d5d5d;
   flex-wrap: wrap;
-  height: 90vh;
+  min-height: 51.8vh; 
   .loading {
     width: 100vw;
     height: 78vh;
