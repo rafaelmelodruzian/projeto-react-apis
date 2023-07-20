@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
+// import React, { useContext, useEffect } from "react";
 import {
   PokemonCardStyle,
   CardBox,
@@ -9,30 +10,28 @@ import {
   ButtonDetail,
   ButtonRemovee,
 } from "./pokemonCardStyle";
-import pokebola from "../../Assets/bola.svg";
-import sendColor from "../../Assets/a/a";
-import sendType from "../../Assets/a/b";
+import { sendColor} from "../../Constants/constants";
 import { goToDetail } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import { DataContext } from "../../Constants/DataContext";
+// import { DataContext } from "../../Constants/DataContext";
 
-function PokemonCard2({ id, tipo, type, pokemon, addToPokedex, removeToPokedex, isFavorite }) {
+function PokemonCard({ id, tipo, type, pokemon, addToPokedex, removeToPokedex, isFavorite }) {
   const navigator = useNavigate();
-  const [favorites, setFavorites] = useContext(DataContext);
+  // const [favorites, setFavorites] = useContext(DataContext);
 
-  useEffect(() => {
-    setIsFavorite(favorites.some((p) => p.id === pokemon.id));
-  }, [favorites, pokemon]);
+  // useEffect(() => {
+  //   setIsFavorite(favorites.some((p) => p.id === pokemon.id));
+  // }, [favorites, pokemon]);
 
-  const setIsFavorite = (isFav) => {
-      };
+  // const setIsFavorite = (isFav) => {
+  //     };
 
   return (
     <PokemonCardStyle>
       <PokeImage
         key={id}
         height="165px"
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
         alt="Imagem do Pokemon"
       />
       <CardBox variant={sendColor(type[0])}>
@@ -47,7 +46,7 @@ function PokemonCard2({ id, tipo, type, pokemon, addToPokedex, removeToPokedex, 
             Detalhes
           </ButtonDetail>
         </InfoBox>
-        <img className="pokebola" src={pokebola} alt="Pokebola" key={id} />
+        <img className="pokebola" src="https://imgur.com/eXtDn9x.png" alt="Pokebola" key={id} />
       </CardBox>
       {isFavorite ? (
         <ButtonRemovee onClick={()=>removeToPokedex(pokemon)}>
@@ -62,4 +61,4 @@ function PokemonCard2({ id, tipo, type, pokemon, addToPokedex, removeToPokedex, 
   );
 }
 
-export default PokemonCard2;
+export default PokemonCard;

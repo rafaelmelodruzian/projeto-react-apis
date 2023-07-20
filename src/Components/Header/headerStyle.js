@@ -1,15 +1,14 @@
 import styled from "styled-components";
-
-const HeaderStyle = styled.header`
+// Estilização Geral da pagina
+export const HeaderStyle = styled.header`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 22vh;
+  height: 26vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 2px solid orangered; */
   background-color: #ffffff;
   .center__header {
     display: grid;
@@ -23,24 +22,14 @@ const HeaderStyle = styled.header`
     }
   }
 `;
-const BtnPokedex = styled.button`
-  width: 15vw;
-  height: 11vh;
-  background: #33a4f5;
-  border-radius: 1vw;
-  margin-right: 2vw;
-  border: none;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 2vw;
-  font-family: "Poppins", sans-serif;
-`;
-const ImagemLogo = styled.img`
-  height: 16vh;
+export const ImagemLogo = styled.img`
   width: 25vw;
-  margin-right: 8vw;
+  margin-left: 3vw;
+margin-right: 5rem;
 `;
-const BtnMaisPokemons = styled.button`
+
+// Estilizações dos botões
+export const BtnMaisPokemons = styled.button`
   width: 25vw;
   font-family: "Poppins";
   font-style: normal;
@@ -50,39 +39,47 @@ const BtnMaisPokemons = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
-  .menor {
-    height: 2vh;
+    .menor {
+    height: 3vh;
   }
+  margin-top: 1.3rem;
 `;
-const BtnAdd = styled.button`
-  width: 15vw;
-  height: 11vh;
+export const BtnAdd = styled.button`
+  width: 14rem;
+  height: 3.5625rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  margin-right: 2rem;
+  margin-top: 1.3rem;
   background: lightgray;
-  border-radius: 1vw;
-  margin-right: 2vw;
+  color: #0f0f0f;
+`;
+export const BtnRemove = styled.button`
+  width: 14rem;
+  height: 3.5625rem;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
-  color: #ffffff;
-  font-size: 1vw;
+  font-size: 1rem;
   font-family: "Poppins", sans-serif;
+  margin-right: 2rem;
+  margin-top: 1.3rem;
+  background: #ff6262;
+  color: #ffffff;
 `;
-const BtnRemove = styled.button`
-  width: 15vw;
-  height: 11vh;
-  background: orangered;
-  border-radius: 1vw;
-  margin-right: 2vw;
+export const BtnPokedex = styled.button`
+  width: 14rem;
+  height: 3.5625rem;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
-  color: #ffffff;
-  font-size: 1vw;
+  font-size: 1rem;
   font-family: "Poppins", sans-serif;
+  margin-right: 2rem;
+  margin-top: 1.3rem;
+  background: #33a4f5;
+  color: #ffffff;
 `;
-export {
-  BtnPokedex,
-  HeaderStyle,
-  BtnMaisPokemons,
-  ImagemLogo,
-  BtnAdd,
-  BtnRemove,
-};

@@ -1,0 +1,29 @@
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 28.1875rem;
+  height: 13.875rem;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: #0F0F0F;
+  padding: 20px;
+  border-radius: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.custom-alert-message {
+  font-family: poppins, sans-serif, Helvetica;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 72px;
+  margin-top: 2rem;
+}
+
+.custom-alert-message2 {
+  font-family: poppins, sans-serif, Helvetica;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
