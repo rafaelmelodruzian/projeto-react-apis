@@ -1,6 +1,13 @@
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
-export default BASE_URL;
+export const BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 
+export const POKE_IMAGES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
+
+export const GIF_LOADING = "https://cdn.dribbble.com/users/722246/screenshots/2845858/pokemon_menu.gif"
+
+export const POKE_BOLA2 = "https://imgur.com/WwJ5Tse.png"
+ 
+
+//Funçoes de tipos e cores pokemons
 export function sendColor(e) {
     let colorByType = "";
     
@@ -64,7 +71,6 @@ export function sendColor(e) {
     }
     return colorByType;
   }
-
 export function sendType(e,id) {
   let typeByType = "";
 

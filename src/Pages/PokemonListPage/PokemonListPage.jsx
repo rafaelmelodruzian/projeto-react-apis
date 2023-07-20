@@ -6,7 +6,7 @@ import { TituloPagina, Container, All } from "./pokemonListPageStyle";
 import Header from "../../Components/Header/Header";
 import PokemonCard from "../../Components/PokemonCard/pokemonCard";
 import CustomAlert from "../../Components/Alert/CustomAlert";
-import BASE_URL from "../../Constants/constants";
+import {BASE_URL, GIF_LOADING} from "../../Constants/constants";
 
 function PokemonListPage({ pokemon }) {
   const [favorites, setFavorites] = useContext(DataContext);
@@ -57,7 +57,7 @@ function PokemonListPage({ pokemon }) {
       <TituloPagina><p className="ajuste">.</p><b className="Title"> Todos os Pokémons</b></TituloPagina>
       <Container>
         {isLoading ? (        
-          <img className="loading" src={"https://cdn.dribbble.com/users/722246/screenshots/2845858/pokemon_menu.gif"} alt="Loading..." />
+          <img className="loading" src={GIF_LOADING} alt="Loading..." />
         ) : (
           pokemonsList.map((pokemon) => {
             const types = pokemon.types.map((typeObj) => typeObj.type.name);
